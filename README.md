@@ -1,5 +1,5 @@
 # QADTFSR: Quality-Assisted Domain Transfer for Fast Face Super-Resolution
-
+🌐 [Project Page](https://chengyihaohku.github.io/QADTFSR/) | 📄 [Paper](https://ieeexplore.ieee.org/abstract/document/11420887/)
 ## PyTorch implementation of QADTFSR:
 >Yi-Hao Cheng, Wan-Chi Siu, and Shing-Chow Chan, "Quality-Assisted Domain Transfer for Fast Face Super-Resolution," IEEE Signal Processing Letters, vol. 33, pp. 1386–1390, 2026, doi: 10.1109/LSP.2026.3669939.
 ## Env Requirements
