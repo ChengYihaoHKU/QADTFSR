@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality-Assisted Domain Transfer for Fast Face Super-Resolution</title>
+  <script type="module" src="https://unpkg.com/img-comparison-slider@8/dist/index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@8/dist/styles.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+    h2 {
+      margin-top: 10px;
+      color: #2c3e50;
+    }
+    h3 {
+      color: #34495e;
+    }
+    blockquote {
+      border-left: 4px solid #3498db;
+      padding-left: 20px;
+      margin: 20px 0;
+      color: #555;
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    p {
+      margin: 10px 0;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 30px 0;
+    }
+    .label {
+      position: absolute;
+      top: 10px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 1);
+      z-index: 10;
+    }
+    .label-left {
+      left: 10px;
+    }
+    .label-right {
+      right: 10px;
+    }
+    .test-section {
+      margin: 30px 0;
+    }
+    .reference {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 40px;
+    }
+
+    .link-buttons {
+      display: flex;
+      gap: 16px;        /* ← controls the space between buttons */
+      flex-wrap: wrap;
+    }
+
+    .link-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;         /* ← space between icon and text */
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .btn-paper { background-color: #35353a; color: white; }
+    .btn-code  { background-color: #35353a; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Quality-Assisted Domain Transfer for Fast Face Super-Resolution</h1>
+  <!-- Paper Link -->
+  <div class="link-buttons">
+    <a href="https://ieeexplore.ieee.org/abstract/document/11420887/" target="_blank" class="btn-paper">
+      <span class="btn-icon">📄</span> Paper Link
+    </a>
+    <a href="https://github.com/ChengYihaoHKU/QADTFSR" target="_blank" class="btn-code">
+      <span class="btn-icon">💻</span> Code Link
+    </a>
+  </div>
+
+    Yi-Hao Cheng, Wan-Chi Siu (Life-FIEEE), and Shing-Chow Chan (SrMIEEE)
+  <p style="font-size: 1.35rem; color: brown; font-weight: 500;  margin: 10px 50px;">
+    (Please scroll down to see more visual results.)
+  </p>
+
+  <h2>Abstract</h2>
+  <p>Face super-resolution (FSR) is a challenging task, especially when the low-resolution (LR) image
+     does not have sufficient information to build a high-resolution (HR) image. 
+     In this paper, we propose a quality-assisted domain transfer framework that uses a two-stage pipeline 
+     for efficient face SR. Instead of treating all LR images uniformly, we use a quality evaluator to classify 
+     images in different LR domains with distinct quality levels and determine the starting points for domain 
+     transfer adaptively. We further design a new residual domain learning strategy that integrates the LR domain
+      with learned residual information. This approach allows us to avoid the correction formulation in diffusion 
+      models and the momentum correction in the originally proposed domain transfer approach and enables the model 
+      to learn the transformation from the LR domain to the HR domain gradually while preserving content information. 
+      The experimental results demonstrate competitive performance with the best inference speed among all approaches.
+     </p>
+
+  <img src="images/Fig4Web.png" alt="Visual Examples">
+  <p>Fig. 1. The overall pipeline of our proposed method. (This is a direct data flow of Fig. 4 from our original paper.
+        The original figure was constrained due to space limitations.)
+    
+  </p>
+  <h2>More Visual Results</h2>
+  <p><strong>This section is to demonstrate more visual results of proposed method.</strong></p>
+  
+  <hr>
+  
+  <h3>A. Synthetic CelebA dataset.</h3>
+  <img src="images/comparsion/Fig1_web.png" alt="Visual Examples">
+  <p>Fig. 2. Visual comparison with state-of-the-art methods on the Synthetic CelebA Dataset. For methods involving iterative sampling, we use the notation "Method-x", where x denotes the number of sampling steps.</p>
+  
+  <img src="images/comparsion/fig2.png" alt="Visual Examples">
+  <p>Fig. 3. Visual examples of our method.</p>
+  
+  <h3>B. Commonly used real-world datasets.</h3>
+  <img src="images/comparsion/fig3.png" alt="Visual Examples">
+  <p>Fig. 4. Visual comparison with state-of-the-art methods. For methods involving iterative sampling, we use the notation "Method-x", where x denotes the number of sampling steps.</p>
+  
+  <img src="images/real-world/realworld/Realworld.png" alt="Visual Examples">
+  <p>Fig. 5. Visual examples of our method.</p>
+
+  
+  <h3>C. Natural LR faces extracted from a Classroom Photo.</h2>
+  <img src="images/real-world/classroom/classroom.png" alt="classroom">
+  <p>Fig. 6. Students in classroom. Original image resolution: 1440*960. Image from [1]. X: Y means X is the face index, Y is the resolution.</p>
+  
+  <img src="images/real-world/classroom/result.png" alt="classroom">
+  <p>Fig. 7. Visual comparison with state-of-the-art methods on natural LR faces extracted from a classroom photo.</p>
+  
+  <div class="reference">
+    <h3>Reference</h3>
+    <p>[1] D. Newton, "Online college classes should have no more than 12 students," Forbes, Jun. 28, 2020. [Online]. Available: <a href="https://www.forbes.com/sites/dereknewton/2020/06/28/online-college-classes-should-have-no-more-than-12-students/" target="_blank">https://www.forbes.com/sites/dereknewton/2020/06/28/online-college-classes-should-have-no-more-than-12-students/</a>. [Accessed: Nov. 24, 2025].</p>
+  </div>
+</body>
+</html>

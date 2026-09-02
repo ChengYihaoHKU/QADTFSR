@@ -1,0 +1,24 @@
+trainer:
+  target: trainer.Trainer_residual
+train:
+  seed: 123456
+  batch: [6, 8] 
+  ckpt_path: weights/best.pth
+data:
+  eval:
+    type: dtls
+    params:
+      dir_path: testdataset/CelebA_test_pair_2000/lq
+      im_exts: png
+      transform_type: default
+      transform_kwargs:
+          mean: 0.5
+          std: 0.5
+      extra_dir_path: ~     # this is for ground truth images
+      extra_transform_type: default
+      extra_transform_kwargs:
+          mean: 0.5
+          std: 0.5
+      recursive: False
+
+
