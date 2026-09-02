@@ -1,5 +1,7 @@
 # QADTFSR: Quality-Assisted Domain Transfer for Fast Face Super-Resolution
 
+## PyTorch implementation of QADTFSR:
+>Yi-Hao Cheng, Wan-Chi Siu, and Shing-Chow Chan, "Quality-Assisted Domain Transfer for Fast Face Super-Resolution," IEEE Signal Processing Letters, vol. 33, pp. 1386–1390, 2026, doi: 10.1109/LSP.2026.3669939.
 ## Env Requirements
 * Python 3.10, Pytorch 2.1.1
 ```bash
@@ -9,6 +11,28 @@ pip install torch==2.1.1 torchvision==0.16.1 --index-url https://download.pytorc
 pip install -r requirement.txt
 ```
 
+## Pretrained Model
+
+Download the pretrained model weights from the [Releases page](https://github.com/ChengYihaoHKU/QADTFSR/releases/tag/v1.0) and place it under the `weights/` directory.
+
+**Option 1: Direct download (browser)**
+
+Click the link below and save it as `weights/best.pth`:
+
+[best.pth (629MB)](https://github.com/ChengYihaoHKU/QADTFSR/releases/download/v1.0/best.pth)
+
+**Option 2: Command line**
+
+```bash
+mkdir -p weights
+wget -O weights/best.pth https://github.com/ChengYihaoHKU/QADTFSR/releases/download/v1.0/best.pth
+```
+
+Or using the GitHub CLI:
+
+```bash
+gh release download v1.0 --pattern "best.pth" --dir weights
+```
 
 ## Dataset Preparation
 
@@ -57,3 +81,8 @@ python inference.py --save_dir train_result/celeba
 This project builds upon:
 - [BasicSR](https://github.com/XPixelGroup/BasicSR)
 - [Resshift](https://github.com/zsyoaoa/resshift)
+
+## Copyright
+
+Copyright preserve by the University of Hong Kong and Saint Francis University.
+Users can use this package for further development. However, it is not for commerical use.
